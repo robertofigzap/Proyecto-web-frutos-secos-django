@@ -1,0 +1,18 @@
+Usuario de la base de datos: admin
+Contraseña de la base de datos: adminadmin
+
+los formularios de la pagina usan crispy forms de django, por si no funciona  el comando es:
+pip install django-crispy-forms
+
+esta instalado en el codigo es solo por si no esta en su computador
+
+y si da problemas el enterno virtual:
+
+pip install virtualenv
+virtualenv entornovirtual
+
+acceso a la pagina:
+127.0.0.1:8000/
+
+acceso al admin de la base de datos:
+127.0.0.1:8000/admin
