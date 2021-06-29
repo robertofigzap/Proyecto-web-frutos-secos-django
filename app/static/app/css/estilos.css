@@ -1,0 +1,32 @@
+#barra{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-transform: uppercase;
+}
+#barra li{
+    display: inline;
+    margin: 0 20px;
+}
+
+
+.responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+  #container {
+    position: center;
+    width: 100%;
+    max-width: 2400px;
+  }
+
+  #Logo {
+    text-align: center;
+    background-color: #ffffff;
+  }
+  
+  body { background-color: #c75910; 
+  
+  }
+  

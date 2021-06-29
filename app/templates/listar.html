@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Mellizas</title>
+</head>
+<body>
+  {% include "encabezado.html" %}
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #669b03">
+    <div class="container">
+    <a class="navbar-brand" href="#">
+      <h2>Gestión de Despacho</h2>
+    </a>
+    <div class="collapse navbar-collapse " id="navbarresponsive"></div>
+    <div class="navbar-nav ml-auto">
+      <a class="nav-link" href="/ingresar">Ingresar </a>
+      <a class="nav-link" href="/listar">Listar</a>
+
+    </div>
+    </nav>
+    </div>
+      <br><br>
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <h2>Listar Despachos</h2>
+              <hr>
+              <table class="table table-stripped table-hover table-responsive-sm">
+                <tr>
+                  <th>N° Despacho</th>
+                  <th>Nombre</th>
+                  <th>Direccion</th>
+                  <th>Producto</th>
+                  <th>Fecha Ingreso</th>
+                  <th>Fecha Entrega</th>
+                  <th>Estado</th>
+                  <th>Opciones</th>
+                </tr>
+                {% for d in despachos %}
+                <tr>
+                  <td>{{d.numerodespacho}}</td>
+                  <td>{{d.nombrecliente}}</td>
+                  <td>{{d.direccion}}</td>
+                  <td>{{d.productos}}</td>
+                  <td>{{d.fechaingreso}}</td>
+                  <td>{{d.fechaentrega}}</td>
+                  <td>
+                    {% if d.entregado %}
+                    Entregado
+                    {% else %}
+                    Por enviar
+                    {% endif %}
+                  </td>
+                  <td>
+                    <a href="{% url 'modificar' d.id %}" class="btn btn-info btn-sm">Editar</a>
+                    <a href="{% url 'eliminar' d.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </table>
+
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+<p>
+  <br>
+      <footer>
+         {% include "footer.html" %}
+      </footer>
+  </html>
